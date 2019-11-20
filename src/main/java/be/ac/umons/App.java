@@ -56,6 +56,16 @@ public class App
         }*/
 
         ingredients.forEach((k, v) -> System.out.println(k + " : " + v.getPrice() + " €"));
+
+        try {
+            System.out.println(ingredients.size());
+            System.out.println(ingredients.get("Dough"));
+        } catch (NullPointerException e) {
+            ColorPrint.printError(e.getMessage());
+        }
+        Prosciuttohut P=new Prosciuttohut("PIZZAP", ingredients);
+        System.out.println(P.getName()+" "+P.getListIngredients());
+
     }
 
     /**
